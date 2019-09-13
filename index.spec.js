@@ -8,6 +8,14 @@ describe('lengthOfLongestSubstring', () => {
   test('should return a number', () => {
     expect(lengthOfLongestSubstring(inputString)).toEqual(expect.any(Number));
   });
+  describe('if input has length', () => {
+    beforeEach(() => {
+      inputString = 'a';
+    });
+    test('should return at least 1', () => {
+      expect(lengthOfLongestSubstring(inputString) > 0).toEqual(true);
+    });
+  });
   describe('returned number', () => {
     test('should be equal to or smaller than the given string length', () => {
       inputString = 'sfklajs32098rwoefjaslfjr0';

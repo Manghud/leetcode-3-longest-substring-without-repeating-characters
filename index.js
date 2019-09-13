@@ -6,7 +6,7 @@
 const lengthOfLongestSubstring = function(s = '') {
   let sequence = {};
   let longest = 0;
-  let lastStartingPoint = 0;
+  let lastStartingPoint = -1;
   while(lastStartingPoint < s.length) {
     for (let c = lastStartingPoint + 1; c < s.length; c++) {
       const character = s[c];
@@ -20,7 +20,7 @@ const lengthOfLongestSubstring = function(s = '') {
     }
     lastStartingPoint++;
   }
-  return longest;
+  return longest || Object.keys(sequence).length;
 };
 
 module.exports = lengthOfLongestSubstring;
