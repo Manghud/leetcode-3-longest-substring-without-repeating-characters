@@ -5,7 +5,7 @@ describe('lengthOfLongestSubstring', () => {
   beforeEach(() => {
     inputString = '';
   });
-  test('should return a string', () => {
-    expect(lengthOfLongestSubstring(inputString)).toEqual(expect.any(String));
+  test('should return a number', () => {
+    expect(lengthOfLongestSubstring(inputString)).toEqual(expect.any(Number));
   });
 });
