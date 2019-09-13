@@ -4,16 +4,23 @@
  * @return {number}
  */
 const lengthOfLongestSubstring = function(s = '') {
-  const sequence = {};
-  const characters = s.split('');
-  for (const character of characters) {
-    if (!sequence[character]) {
-      sequence[character] = true;
-    } else {
-      return Object.keys(sequence).length;
+  let sequence = {};
+  let longest = 0;
+  let lastStartingPoint = 0;
+  while(lastStartingPoint < s.length) {
+    for (let c = lastStartingPoint + 1; c < s.length; c++) {
+      const character = s[c];
+      if (!sequence[character]) {
+        sequence[character] = true;
+        continue;
+      } else if (Object.keys(sequence).length > longest){
+        longest = Object.keys(sequence).length;
+      }
+      sequence = { [character] : true };
     }
+    lastStartingPoint++;
   }
-  return s.length;
+  return longest;
 };
 
 module.exports = lengthOfLongestSubstring;

@@ -17,5 +17,9 @@ describe('lengthOfLongestSubstring', () => {
       inputString = 'abcda';
       expect(lengthOfLongestSubstring(inputString)).toEqual(4);
     });
+    test('should be equal to the length of the longest substring without repeating characters', () => {
+      inputString = 'abcdabrstuvwxyrocomurciel 2agost';
+      expect(lengthOfLongestSubstring(inputString)).toEqual('murciel 2agost'.length);
+    });
   });
 });
